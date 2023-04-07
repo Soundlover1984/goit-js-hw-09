@@ -59,3 +59,43 @@ img {
 .body-img{
   background: url(../images/background.jpg) no-repeat;
 }
+
+.btn-box{
+  display: flex;
+  justify-content: center;
+  margin-top: 200px;
+}
+
+.main__link-btn {
+  margin-bottom: 20px;
+  text-decoration: none;
+  margin-right: 20px;
+  max-width: 100px;
+  padding: 12px 36px;
+  display: flex;
+  justify-content: center;
+
+  border: 0;
+  outline: 0;
+  border-radius: 20px;
+
+  background-color: yellowgreen;
+  text-shadow: 1px 1px 0 hsl(0, 40%, 98%);
+
+  font-size: 24px !important;
+  font: inherit;
+  font-weight: normal;
+
+  color: #102878;
+  box-shadow: -5px -5px 20px hsl(0, 40%, 98%), 5px 5px 20px #babecc;
+  transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+}
+
+.main__link-btn:hover {
+  box-shadow: -2px -2px 5px  hsl(0, 40%, 98%), 2px 2px 5px #babecc;
+}
+
+.main__link-btn:active {
+  box-shadow: inset 1px 1px 2px #babecc, inset -1px -1px 2px  hsl(0, 40%, 98%);
+}
