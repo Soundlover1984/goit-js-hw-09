@@ -20,8 +20,8 @@ flatpickr(dateInput, {
   time_24hr: true,
   defaultDate: new Date(),
   minuteIncrement: 1,
-  onClose(selectedDate) {
-    if (selectedDate[0] <= Date.now()) {
+  onClose(selectedDates) {
+    if (selectedDates[0] <= Date.now()) {
       Notiflix.Notify.failure('Please choose a date in the future');
       btnStart.disabled = true;
     } else {
@@ -31,22 +31,26 @@ flatpickr(dateInput, {
   },
 });
 
-btnStart.addEventListener('click', onBtnStartClick);
+btnStart.addEventListener('click', onBtnStart);
 
-function onBtnStartClick() {
-  btnStart.disabled = true;
-  dateInput.disabled = true;
-  timerValue = setInterval(() => {
+function addLeadingZero(value) {
+  return `${value}`.padStart(2, '0');
+}
+
+function onBtnStart() {
+    dateInput.disabled = true;
+    btnStart.disabled = true;
+    timerValue = setInterval(() => {
     const chosenDate = new Date(dateInput.value);
-    const timeToFinish = chosenDate - Date.now();
-    const { days, hours, minutes, seconds } = convertMs(timeToFinish);
+    const targetTime = chosenDate - Date.now();
+    const { days, hours, minutes, seconds } = convertMs(targetTime);
 
     dayRemain.textContent = addLeadingZero(days);
     hourRemain.textContent = addLeadingZero(hours);
     minRemain.textContent = addLeadingZero(minutes);
     secRemain.textContent = addLeadingZero(seconds);
 
-    if (timeToFinish < 1000) {
+    if (targetTime < 1000) {
       clearInterval(timerValue);
       dateInput.disabled = false;
     }
@@ -72,7 +76,5 @@ function convertMs(ms) {
   return { days, hours, minutes, seconds };
 }
 
-function addLeadingZero(value) {
-  return `${value}`.padStart(2, '0');
-}
+
 
