@@ -1,50 +1,21 @@
-const buttonStart = document.querySelector('button[data-start]');
-const buttonStop = document.querySelector('button[data-stop]');
+const buttonStart = document.querySelector('[data-start]');
+const buttonStop = document.querySelector('[data-stop]');
 let intervalValue = null;
 
-function changeColor() {
-  document.body.style.backgroundColor = `#${Math.floor(Math.random() * 16777215).toString(16).padStart(6, "0")}`;
-}
+const changeColor = () => {
+  document.body.style.backgroundColor = `#${Math.floor(Math.random() * 16777215)
+    .toString(16)
+    .padStart(6, '0')}`;
+};
 
-buttonStart.addEventListener('click', function() {
+buttonStart.addEventListener('click', () => {
   intervalValue = setInterval(changeColor, 1000);
-  buttonStart.setAttribute('disabled', 'true');
-  buttonStop.removeAttribute('disabled');
+  buttonStart.disabled = true;
+  buttonStop.disabled = false;
 });
 
-buttonStop.addEventListener('click', function() {
+buttonStop.addEventListener('click', () => {
   clearInterval(intervalValue);
-  buttonStop.setAttribute('disabled', 'true');
-  buttonStart.removeAttribute('disabled');
+  buttonStop.disabled = true;
+  buttonStart.disabled = false;
 });
-
-// 2nd variant
-
-
-// const buttonStart = document.querySelector('button[data-start]');
-// const buttonStop = document.querySelector('button[data-stop]');
-// let intervalValue = null;
-
-// function enableDisableButtons(startBtnDisabled, stopBtnDisabled) {
-//   buttonStart.disabled = startBtnDisabled;
-//   buttonStop.disabled = stopBtnDisabled;
-// }
-
-// function changeColor() {
-//   document.body.style.backgroundColor = `#${Math.floor(Math.random() * 16777215)
-//     .toString(16)
-//     .padStart(6, '0')}`;
-// }
-
-// buttonStart.addEventListener('click', function () {
-//   intervalValue = setInterval(changeColor, 1000);
-//   enableDisableButtons(true, false);
-// });
-
-// buttonStop.addEventListener('click', function () {
-//   clearInterval(intervalValue);
-//   enableDisableButtons(false, true);
-// });
-
-
-
