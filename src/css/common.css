@@ -56,9 +56,15 @@ img {
   box-shadow: inset 1px 1px 2px #babecc, inset -1px -1px 2px  hsl(0, 40%, 98%);
 }
 
-.body-img{
+
+.body-img-timer{
+  background: url(../images/time.jpg) no-repeat;
+}
+
+.body-img {
   background: url(../images/background.jpg) no-repeat;
 }
+
 
 .btn-box{
   display: flex;
@@ -76,3 +82,59 @@ img {
  text-shadow: 1px 1px 0 hsl(0, 40%, 98%);
 }
 
+.timer-box{
+  margin-top: 200px;
+  text-align: center;
+}
+
+.timer {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-direction: row;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-right: 20px;
+  padding-top: 15px;
+  font-size: x-large;
+  text-transform: uppercase;
+  font-weight: 700;
+  width: 140px;
+  height: 140px;
+}
+
+.value {
+  color: black;
+  font-weight: 700;
+  font-size: 50px;
+}
+
+.label {
+  color: black;
+  font-weight: 700;
+  font-size: 15px;
+}
+
+.date-input {
+  margin-bottom: 100px;
+  height: 50px;
+  text-align: center;
+  font-size: large;
+  border-radius: 8px;
+  margin-left: 10px;
+  cursor: pointer;
+  border: 2px solid black;
+  background-color: yellowgreen;
+  outline: none;
+  font-weight: 700;
+}
+
+.date-input:disabled {
+  border: 2px solid  #babecc;
+  background-color: grey;
+  outline: none;
+}

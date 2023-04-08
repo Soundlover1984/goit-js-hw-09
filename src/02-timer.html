@@ -6,11 +6,11 @@
     <title>Countdown timer</title>
     <link rel="stylesheet" href="css/common.css" />
   </head>
-  <body>
-    <p><a href="index.html">Go back</a></p>
-
-    <input type="text" id="datetime-picker" />
-    <button type="button" data-start>Start</button>
+  <body class="body-img-timer">
+    <p><a class="main__link" href="index.html">Go back</a></p>
+    <div class="timer-box">
+    <input class="date-input" type="text" id="datetime-picker" />
+    <button class="btn" type="button" data-start>Start</button>
 
     <div class="timer">
       <div class="field">
@@ -30,7 +30,7 @@
         <span class="label">Seconds</span>
       </div>
     </div>
-
+  </div>
     <script src="js/02-timer.js" type="module"></script>
   </body>
 </html>
