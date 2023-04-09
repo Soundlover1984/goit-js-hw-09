@@ -8,6 +8,8 @@ const changeColor = () => {
     .padStart(6, '0')}`;
 };
 
+buttonStop.disabled = true;
+
 buttonStart.addEventListener('click', () => {
   intervalValue = setInterval(changeColor, 1000);
   buttonStart.disabled = true;
