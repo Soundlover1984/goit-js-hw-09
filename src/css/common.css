@@ -84,6 +84,7 @@ img {
  border-radius: 20px;
  background-color: yellowgreen;
  text-shadow: 1px 1px 0 hsl(0, 40%, 98%);
+ cursor: pointer;
 }
 
 .timer-box{
